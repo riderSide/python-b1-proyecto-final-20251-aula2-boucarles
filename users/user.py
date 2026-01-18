@@ -24,7 +24,7 @@ class User(ABC):
 
 class Cashier(User): 
   """
-    Clase que representa un usuari tipu scaixer
+    Clase que representa un usuari tipus caixer
     Attributes:
         dni (str): DNI
         name (str): nom
@@ -41,7 +41,7 @@ class Cashier(User):
 
   def describe(self)-> str:
     """
-    Returns: str: descripció del caixer
+    Returns: str: descripció d'un usuari tipus caixer
     """
     return f"Cashier - Name: {self.name}, DNI: {self.dni}, Timetable: {self.timeTable}, Salary: {self.salary}."
 
@@ -49,7 +49,7 @@ class Cashier(User):
 
 class Customer(User):
   """
-    Clase que representa un usuari tipu client
+    Clase que representa un usuari tipus client
     Attributes:
         dni (str): DNI
         name (str): nom
@@ -66,6 +66,6 @@ class Customer(User):
 
   def describe(self) -> str:
     """
-    Returns: str: descripció d'un client
+    Returns: str: descripció d'un usuari tipus client
     """
     return f"Customer - Name: {self.name}, DNI: {self.dni}, Age: {self.age}, Email: {self.email}, Postal Code: {self.postalCode}"
