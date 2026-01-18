@@ -1,27 +1,70 @@
-#Write your code here
+from abc import ABC, abstractmethod
+
 
 class FoodPackage (ABC): 
-    @abstractmethod
-    def pack(self)  -> str:
-        pass
-    @abstractmethod
-    def material(self) -> str:
-        pass
-    def describe(self):
-        return f"Empaque: {self.pack()} , Material: {self.material()}"    
+
+  @abstractmethod
+  def pack(self)  -> str:
+    """
+    Les implementacions han de retorna el tipus de contenidor.
+    """
+    pass
+  
+  
+  @abstractmethod
+  def material(self) -> str:
+    """
+    Les implementacions han de retorna el material del contenidor.
+    """
+    pass
+  
+
+  def describe(self):
+    """
+    Métode que descriu el tipus i material del contenidor.
+    """
+    return f"Embolcall: {self.pack()} , Material: {self.material()}"    
     
+
+
+
 class Wrapping(FoodPackage):  
-  #Write your code here
-  pass
+
+  def pack(self) -> str:
+      return "Food wrap paper"
+  
+  def material(self) -> str:
+      return "Paper"
+
+
 
 class Bottle(FoodPackage):  
-  #Write your code here
-  pass
-      
-class Glass(FoodPackage):  
-  #Write your code here
-  pass
+  
+  def pack(self) -> str:
+      return "Bottle"
+  
 
-class Box(FoodPackage):  
-  #Write your code here
-  pass
+  def material(self) -> str:
+    return "Cardboard"
+
+
+
+class Glass(FoodPackage):
+
+  def pack(self) -> str:
+    return "Glass"
+  
+
+  def material(self) -> str:
+    return "Glass"
+
+
+
+class Box(FoodPackage):
+
+  def pack(self) -> str:
+    return "Box"
+  
+
+  def material(self) -> str:
+    return "Cardboard"
