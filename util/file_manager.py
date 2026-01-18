@@ -18,7 +18,7 @@ class CSVFileManager:
   def read(self) -> pd.DataFrame:
     """
     Llegeix el fitxer CSV i retorna un DataFrame.
-    Retorna:
+    Returns:
       pd.DataFrame: El DataFrame llegit des del fitxer CSV.
     Raises:
       FileNotFoundError: Si el fitxer no es troba a la ruta especificada
