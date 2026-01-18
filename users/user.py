@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class User(ABC):
   """
     Clase abstracta que representa un usuari genèric
@@ -16,8 +17,10 @@ class User(ABC):
 
 
   @abstractmethod
-  def describe(self):
+  def describe(self)-> str:
       pass
+
+
 
 class Cashier(User): 
   """
@@ -30,17 +33,18 @@ class Cashier(User):
         salary (float): salari
   """
 
-  def __init__(self,dni:str,name:str,age:int,timeTable:str,salary:float):
+  def __init__(self, dni:str, name:str, age:int, timeTable:str, salary:float):
     super().__init__(dni,name,age)
     self.timeTable = timeTable
     self.salary = salary
  
 
-  def describe(self):
+  def describe(self)-> str:
     """
     Returns: str: descripció del caixer
     """
     return f"Cashier - Name: {self.name}, DNI: {self.dni}, Timetable: {self.timeTable}, Salary: {self.salary}."
+
 
 
 class Customer(User):
@@ -54,13 +58,13 @@ class Customer(User):
         postalCode (str): codi postal
   """
 
-  def __init__(self,dni:str,name:str,age:int,email:str,postalCode:str):
+  def __init__(self, dni:str, name:str, age:int, email:str, postalCode:str):
     super().__init__(dni,name,age)
     self.email = email
     self.postalCode = postalCode
 
 
-  def describe(self):
+  def describe(self) -> str:
     """
     Returns: str: descripció d'un client
     """
