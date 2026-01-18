@@ -45,7 +45,7 @@ class Bottle(FoodPackage):
   
 
   def material(self) -> str:
-    return "Cardboard"
+    return "Plastic"
 
 
 
@@ -56,7 +56,7 @@ class Glass(FoodPackage):
   
 
   def material(self) -> str:
-    return "Glass"
+    return "Cardboard"
 
 
 
