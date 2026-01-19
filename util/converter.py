@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
+
 from users import Cashier, Customer
 from products.product import Hamburger, Soda, Drink, HappyMeal
+
 
 class Converter(ABC):
   """
@@ -27,7 +29,6 @@ class Converter(ABC):
       print(obj.describe())
 
 
-
 class CashierConverter(Converter):
 
   def convert(self, dataFrame, *args) -> list:
@@ -45,12 +46,11 @@ class CashierConverter(Converter):
         dni= row.dni,
         name= row.name,
         age= row.age,
-        timeTable= row.timeTable,
+        timetable= row.timetable,
         salary= row.salary
       )
       data_list.append(cashier)
     return data_list
-
 
 
 class CustomerConverter(Converter):
@@ -71,13 +71,12 @@ class CustomerConverter(Converter):
         name= row.name,
         age= row.age,
         email= row.email,
-        postalCode= row.postalCode
+        postalcode= row.postalcode
       )
       data_list.append(customer)
     return data_list
   
   
-
 class ProductConverter(Converter):
   
   def convert(self, dataFrame, product_type:str) -> list:
@@ -117,3 +116,4 @@ class ProductConverter(Converter):
       products_list.append(product)
     
     return products_list
+ 
