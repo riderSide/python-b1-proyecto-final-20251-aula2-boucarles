@@ -29,13 +29,13 @@ class Cashier(User):
         dni (str): DNI
         name (str): nom
         age (int): edat
-        timeTable (str): horari
+        timetable (str): horari
         salary (float): salari
   """
 
-  def __init__(self, dni:str, name:str, age:int, timeTable:str, salary:float):
+  def __init__(self, dni:str, name:str, age:int, timetable:str, salary:float):
     super().__init__(dni,name,age)
-    self.timeTable = timeTable
+    self.timetable = timetable
     self.salary = salary
  
 
@@ -43,7 +43,7 @@ class Cashier(User):
     """
     Returns: str: descripció d'un usuari tipus caixer
     """
-    return f"Cashier - Name: {self.name}, DNI: {self.dni}, Timetable: {self.timeTable}, Salary: {self.salary}."
+    return f"Cashier - Nom: {self.name}, DNI: {self.dni}, Horari: {self.timetable}, Salari: {self.salary}"
 
 
 
@@ -55,17 +55,16 @@ class Customer(User):
         name (str): nom
         age (int): edat
         email (str): email
-        postalCode (str): codi postal
+        postalcode (str): codi postal
   """
 
-  def __init__(self, dni:str, name:str, age:int, email:str, postalCode:str):
+  def __init__(self, dni:str, name:str, age:int, email:str, postalcode:str):
     super().__init__(dni,name,age)
     self.email = email
-    self.postalCode = postalCode
-
+    self.postalcode = postalcode
 
   def describe(self) -> str:
     """
     Returns: str: descripció d'un usuari tipus client
     """
-    return f"Customer - Name: {self.name}, DNI: {self.dni}, Age: {self.age}, Email: {self.email}, Postal Code: {self.postalCode}"
+    return f"Customer - Nom: {self.name}, DNI: {self.dni}, Edat: {self.age}, Email: {self.email}, Codi Postal: {self.postalcode}"
