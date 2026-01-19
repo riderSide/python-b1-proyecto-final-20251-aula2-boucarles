@@ -21,7 +21,7 @@ class Product(ABC):
 
 
     def describe(self):
-        return f"Product - Type: {self.type()}, Name: {self.name}, Id: {self.id} , Price: {self.price} , {self.foodPackage().describe()}."   
+        return f"Producte - Tipus: {self.type()}, Nom: {self.name}, Id: {self.id} , Preu: {self.price} , {self.foodPackage().describe()}."   
 
 
 
