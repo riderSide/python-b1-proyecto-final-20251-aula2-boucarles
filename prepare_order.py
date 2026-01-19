@@ -41,6 +41,7 @@ class PrepareOrder:
                 case '0':
                     drawer.modal(text= "Iniciant nova comanda...", timeout= 1)
                     self.new_order(drawer)
+                    
                 case '1':
                     drawer.list("Llistat de Clients", self.customers)
 
