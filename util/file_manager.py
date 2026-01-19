@@ -25,7 +25,6 @@ class CSVFileManager:
     """
 
     try:
-      pd.read_csv(self.path)
       return pd.read_csv(self.path)
     except FileNotFoundError:
       raise FileNotFoundError(f"Error: No s'ha trobat el fitxer a la ruta: {self.path}")
@@ -37,7 +36,7 @@ class CSVFileManager:
     """
     Escriu un DataFrame al fitxer CSV.
     Args:
-      dataFrame (pd.DataFrame): El DataFrame que es vol escriure.
+      dataFrame (DataFrame): El DataFrame que es vol escriure.
     Returns:
       bool: True si l'escriptura és exitosa, False en cas contrari.
     Raises:
