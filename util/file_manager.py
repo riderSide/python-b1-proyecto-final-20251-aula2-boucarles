@@ -1,4 +1,5 @@
 import pandas as pd
+from pathlib import Path
 
 class CSVFileManager:
   """
@@ -43,7 +44,12 @@ class CSVFileManager:
       Exception: Si hi ha un error en escriure el fitxer CSV.
     """
     try:
-      dataFrame.to_csv(self.path, index=False, mode='a')
+      # convertim la cadena del path a un objecte tipus Path
+      path= Path(self.path)
+      
+      # fem servir el mode 'a' per afegit
+      # header = not path.exists() per escriure l'encapçalament només si el fitxer no existeix
+      dataFrame.to_csv(path, index=False, mode='a', header= not path.exists())
       return True
     except Exception as e:
       print(f"Error en escriure el fitxer CSV: {e}")
