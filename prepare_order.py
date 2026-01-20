@@ -129,10 +129,13 @@ class PrepareOrder:
                 drawer.modal("Producte no trobat. Torna-ho a intentar.", timeout=2)
             else:
                 # preguntem si vol afegir més productes
-                add_more = drawer.ask("Vols afegir més productes? (s/n): ")
-                if add_more.lower() == 'n':
-                    break
-
+                while True:
+                    add_more = drawer.ask("Vols afegir més productes? (s/n): ")
+                    if add_more.lower() == 's':
+                        break  # Torna al principi del bucle per afegir més productes
+                    elif add_more.lower() == 'n':
+                        return  # Surt de la funció
+                    drawer.clear_screen()
 
       
     def new_order(self, drawer: Drawer):
