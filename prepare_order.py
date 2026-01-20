@@ -195,7 +195,7 @@ class PrepareOrder:
         Creem un llista (mapping) amb els prodcutes que volem carregar i els 
         seus fitxers corresponents.
         Amb aquest sistema fem un bucle per carregar i convertir.  
-        Evitem repetir codi i el codi és més fácil d'ampliar.
+        Evitem repetir codi i el codi és més fàcil d'ampliar.
         """
         try:
             products_dict = {
