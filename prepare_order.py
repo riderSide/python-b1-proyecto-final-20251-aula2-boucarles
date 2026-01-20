@@ -75,7 +75,7 @@ class PrepareOrder:
 
         # No s'ha trobat el caixer, el torem a demanar
         drawer.modal("Caixer no trobat.", timeout=2)
-        self.cashier_login(drawer)
+        return self.cashier_login(drawer)
     
 
     def search_customer(self, drawer: Drawer) -> Customer:
@@ -98,7 +98,7 @@ class PrepareOrder:
 
         # No s'ha trobat el client, el torem a demanar
         drawer.modal("Client no trobat.", timeout=2)
-        self.search_customer(drawer)
+        return self.search_customer(drawer)
 
 
     def product_selection(self, drawer: Drawer, order: Order):
@@ -161,11 +161,6 @@ class PrepareOrder:
         
         # mostrem el resum de la comanda
         drawer.show_order_summary(order)
-
-        
-
-
-
 
 
     def read_data_soources(self) -> bool:
