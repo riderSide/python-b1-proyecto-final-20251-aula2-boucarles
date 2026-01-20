@@ -34,16 +34,16 @@ class CSVFileManager:
    
   def write(self,dataFrame) -> bool:
     """
-    Escriu un DataFrame al fitxer CSV.
+    Afegeix un DataFrame al fitxer CSV.
     Args:
-      dataFrame (DataFrame): El DataFrame que es vol escriure.
+      dataFrame (DataFrame): El DataFrame que es vol afegir.
     Returns:
       bool: True si l'escriptura és exitosa, False en cas contrari.
     Raises:
       Exception: Si hi ha un error en escriure el fitxer CSV.
     """
     try:
-      dataFrame.to_csv(self.path, index=False)
+      dataFrame.to_csv(self.path, index=False, mode='a')
       return True
     except Exception as e:
       print(f"Error en escriure el fitxer CSV: {e}")
